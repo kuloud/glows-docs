@@ -81,6 +81,12 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: "img/logo_text.svg",
+    announcementBar: { 
+      id: 'announcementBar-1',
+      content: `<img src="/img/respect_emoji.png" alt="Respect Emoji" class="half-emoji-icon" /> Speed up your innovation with Glows.ai, Scale up your large model training <a class="announcement-bar-button" href="https://glows.ai">Learn More</a>`,
+      isCloseable: true,
+      textColor: "#FFF",
+    },
     navbar: {
       logo: {
         alt: "Glows.ai",

@@ -125,7 +125,56 @@
     image-rendering: -webkit-optimize-contrast;
 }
 
+#__docusaurus {
+    div[class*='announcementBar_'] {
+        background-image: url('/img/bg-announcement-bar.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
+        button[class*='announcementBarClose_'] {
+            color: white;
+
+            svg {
+                width: 18px;
+                height: 18px;
+                padding: 4px;
+                background-color: rgba(0, 0, 0, 0.32);
+                border-radius: 999px;
+            }
+
+        }
+    }
+
+    .announcement-bar-button {
+        padding: 4px 12px;
+        border-radius: 999px;
+        background: radial-gradient(96.59% 138.97% at 0% -32.14%, #EBE0FA 0%, #FFFFFF 100%);
+        border: 0.69px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.56);
+        color: var(--color-purple-500);
+        background-color: white;
+        text-decoration: none;
+    }
+
+    .theme-doc-sidebar-item-link-level-1>.menu__link--active {
+        border-radius: 4px;
+        padding: 4px 8px;
+        background: radial-gradient(99.75% 99.75% at 50% 99.75%, rgba(168, 85, 247, 0.64) 0%, rgba(15, 23, 42, 0.0001) 100%);
+        border: 1px solid;
+        border-image-source: linear-gradient(0deg, var(--Slate-800, #1D293D), var(--Slate-800, #1D293D)),
+            conic-gradient(from 90deg at 50% 50%, #334155 0deg, #334155 169.87deg, #94A3B8 274.98deg, #334155 360deg);
+    }
+
+    .docSidebarItemIcon {
+        color: #4caf50;
+        /* 绿色的 "GET" 图标 */
+    }
+}
 
 
 .navbar {
@@ -209,4 +258,12 @@ code {
     border: 1px solid var(--color-neutral-200);
     gap: 8px;
     border-radius: 4px;
+}
+
+.half-emoji-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+    border-radius: 0px;
 }
