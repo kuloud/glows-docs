@@ -80,11 +80,11 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: "img/logo_text.jpg",
+    image: "img/logo_text.svg",
     navbar: {
       logo: {
         alt: "Glows.ai",
-        src: "img/logo_text.jpg",
+        src: "img/logo_text.svg",
         target: "_blank",
         href: "https://glows.ai",
       },

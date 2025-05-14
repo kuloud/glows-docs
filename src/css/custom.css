@@ -25,15 +25,58 @@
 
 /* You can override the default Infima variables here. */
 :root {
-    --ifm-color-primary: #365FEF;
-    --ifm-color-primary-dark: #2C55E5;
-    --ifm-color-primary-darker: #224BDB;
-    --ifm-color-primary-darkest: #0E37C7;
-    --ifm-color-primary-light: #4069F9;
-    --ifm-color-primary-lighter: #4A73FF;
-    --ifm-color-primary-lightest: #5E87FF;
+    --ifm-color-primary: var(--color-purple-500);
+    --ifm-color-primary-dark: var(--color-purple-400);
+    --ifm-color-primary-darker: var(--color-purple-300);
+    --ifm-color-primary-darkest: var(--color-purple-200);
+    --ifm-color-primary-light: var(--color-purple-400);
+    --ifm-color-primary-lighter: var(--color-purple-300);
+    --ifm-color-primary-lightest: var(--color-purple-200);
     --ifm-code-font-size: 95%;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+    --color-slate-50: #f8fafc;
+    --color-slate-100: #f1f5f9;
+    --color-slate-200: #e2e8f0;
+    --color-slate-300: #cbd5e1;
+    --color-slate-400: #94a3b8;
+    --color-slate-500: #64748b;
+    --color-slate-600: #475569;
+    --color-slate-700: #334155;
+    --color-slate-800: #1e293b;
+    --color-slate-900: #0f172a;
+    --color-slate-950: #0b1120;
+    --color-slate-1000: #000000;
+
+    --color-neutral-50: #fafafa;
+    --color-neutral-100: #f4f4f5;
+    --color-neutral-200: #e4e4e7;
+    --color-neutral-300: #d6d6db;
+    --color-neutral-400: #a1a1aa;
+    --color-neutral-500: #71717a;
+    --color-neutral-600: #52525b;
+    --color-neutral-700: #3f3f46;
+    --color-neutral-800: #27272a;
+    --color-neutral-900: #18181b;
+    --color-neutral-950: #09090b;
+    --color-neutral-1000: #000000;
+
+    --color-purple-50: #f5f3ff;
+    --color-purple-100: #ede9fe;
+    --color-purple-200: #ddd6fe;
+    --color-purple-300: #c4b5fd;
+    --color-purple-400: #a78bfa;
+    --color-purple-500: #8b5cf6;
+    --color-purple-600: #7c3aed;
+    --color-purple-700: #6d28d9;
+    --color-purple-800: #5b21b6;
+    --color-purple-900: #4c1d95;
+    --color-purple-950: #3e1d6b;
+    --color-purple-1000: #3b0824;
+
+    --ifm-background-color: var(--color-slate-900);
+    --ifm-font-color-base: var(--color-slate-200);
+    --ifm-font-color-primary: var(--color-slate-900);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -48,14 +91,52 @@
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+#__docusaurus::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-image: url('/img/bg-top.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1000;
+    pointer-events: none;
+    max-width: 58vw;
+    width: 100%;
+    aspect-ratio: 837 / 376;
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+#__docusaurus::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    max-width: 100vw;
+    width: 100%;
+    aspect-ratio: 1441 / 413;
+    background-image: url('/img/bg-bottom.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    pointer-events: none;
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+
+
+
 .navbar {
-    @apply py-4 px-8;
+    @apply py-4 px-6;
     @apply h-auto;
+    background-color: var(--color-slate-900);
 }
 
 .navbar__logo {
-    width: 174px;
-    height: 40px;
+    width: 143px;
+    height: 28px;
 }
 
 .menu__link {
@@ -67,19 +148,65 @@
 }
 
 h1 {
-    font-weight: 800;
-    font-size: 32px;
+    font-weight: 700;
+    font-size: 44px;
     line-height: 44px;
+    letter-spacing: -0.5px;
 }
 
 h2 {
-    font-weight: 800;
-    font-size: 24px;
-    line-height: 32px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: -0.25px;
 }
 
 h3 {
     font-weight: 700;
     font-size: 20px;
-    line-height: 28px;
+    line-height: 30px;
+    letter-spacing: -0.25px;
+}
+
+h4 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.25px;
+}
+
+li {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0px;
+}
+
+p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0px;
+    color: var(--color-slate-400);
+}
+
+a {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0px;
+    color: var(--color-slate-200);
+}
+
+img {
+    border-radius: 8px;
+}
+
+code {
+    padding: 2px 4px;
+    color: var(--ifm-font-color-primary);
+    background-color: var(--color-neutral-50);
+    border: 1px solid var(--color-neutral-200);
+    gap: 8px;
+    border-radius: 4px;
 }
