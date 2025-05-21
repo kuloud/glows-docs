@@ -39,10 +39,11 @@ const config: Config = {
   presets: [
     [
       "classic",
+      /** @type {import('@docusaurus/preset-classic').Options} */
       {
         docs: {
           path: "docs",
-          routeBasePath: "docs",
+          routeBasePath: "/",
           sidebarPath: "./sidebars.ts",
           breadcrumbs: false,
         },
@@ -50,59 +51,84 @@ const config: Config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
-      } satisfies Preset.Options,
+      },
     ],
   ],
 
-  plugins: [
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "tutorials",
-        path: "tutorials",
-        routeBasePath: "tutorials",
-        sidebarPath: "./sidebars-tutorials.ts",
-        includeCurrentVersion: true,
-      },
-    ],
-    async function myPlugin(context, options) {
-      return {
-        name: "docusaurus-tailwindcss",
-        configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require("tailwindcss"));
-          postcssOptions.plugins.push(require("autoprefixer"));
-          return postcssOptions;
-        },
-      };
-    },
-  ],
+  // plugins: [
+  //   [
+  //     "@docusaurus/plugin-content-docs",
+  //     {
+  //       id: "tutorials",
+  //       path: "tutorials",
+  //       routeBasePath: "tutorials",
+  //       sidebarPath: "./sidebars-tutorials.ts",
+  //       includeCurrentVersion: true,
+  //     },
+  //   ],
+  //   async function myPlugin(context, options) {
+  //     return {
+  //       name: "docusaurus-tailwindcss",
+  //       configurePostCss(postcssOptions) {
+  //         // Appends TailwindCSS and AutoPrefixer.
+  //         postcssOptions.plugins.push(require("tailwindcss"));
+  //         postcssOptions.plugins.push(require("autoprefixer"));
+  //         return postcssOptions;
+  //       },
+  //     };
+  //   },
+  // ],
 
   themeConfig: {
     // Replace with your project's social card
-    image: "img/logo_text.jpg",
+    image: "img/logo_text.svg",
+    announcementBar: {
+      id: "announcementBar-1",
+      content: `<img src="/img/respect_emoji.png" alt="Respect Emoji" class="half-emoji-icon" /> Speed up your innovation with Glows.ai, Scale up your large model training <a class="announcement-bar-button" href="https://glows.ai">Learn More</a>`,
+      isCloseable: true,
+      textColor: "#FFF",
+    },
     navbar: {
       logo: {
         alt: "Glows.ai",
-        src: "img/logo_text.jpg",
+        src: "img/logo_text.svg",
         target: "_blank",
         href: "https://glows.ai",
       },
       items: [
         {
-          type: "doc",
-          docId: "Overview",
+          to: "product",
           position: "left",
-          label: "Docs",
-          className: "t-bold",
+          label: "Product",
+          className: "text-[14px] leading-[22px] font-medium",
+        },
+        {
+          to: "solution",
+          position: "left",
+          label: "Solution",
+          routeBasePath: "/solution",
+          className: "text-[14px] leading-[22px] font-medium",
+        },
+        {
+          to: "api",
+          position: "left",
+          label: "API",
+          routeBasePath: "/api",
+          className: "text-[14px] leading-[22px] font-medium",
         },
         {
           type: "doc",
-          docsPluginId: "tutorials",
-          docId: "vscode",
+          docId: "docs/overview",
           position: "left",
-          label: "Tutorials",
-          className: "t-bold",
+          label: "User Doc",
+          className: "text-[14px] leading-[22px] font-medium",
+        },
+        {
+          to: "about-us",
+          position: "left",
+          label: "About us",
+          routeBasePath: "/about-us",
+          className: "text-[14px] leading-[22px] font-medium",
         },
         {
           type: "localeDropdown",
