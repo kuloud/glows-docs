@@ -113,7 +113,7 @@ const config: Config = {
           to: "api",
           position: "left",
           label: "API",
-          routeBasePath: "/api",
+          routeBasePath: "api",
           className: "text-[14px] leading-[22px] font-medium",
         },
         {
@@ -127,7 +127,7 @@ const config: Config = {
           to: "about-us",
           position: "left",
           label: "About us",
-          routeBasePath: "/about-us",
+          routeBasePath: "about-us",
           className: "text-[14px] leading-[22px] font-medium",
         },
         {

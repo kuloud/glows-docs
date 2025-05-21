@@ -294,6 +294,7 @@
   --ifm-background-color: var(--color-slate-900);
   --ifm-font-color-base: var(--color-slate-200);
   --ifm-font-color-primary: var(--color-slate-900);
+  --ifm-font-color-secondary: var(--color-slate-800);
 
   --ifm-hr-border-color: var(--color-slate-800);
   --ifm-toc-border-color: rgba(202, 213, 226, 0.08);
@@ -394,6 +395,10 @@
 
   nav[aria-label="Main"] {
     border-bottom: 1px solid rgba(202, 213, 226, 0.08);
+
+    .dropdown__link {
+      color: var(--ifm-font-color-secondary);
+    }
   }
 
   div[class*="sidebar_"] nav {
